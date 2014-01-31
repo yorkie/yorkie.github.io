@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-	"engines": {
+  "engines": {
     "node": "0.10.x"
-	}
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/yorkie/yorkiefixer.me.git"
