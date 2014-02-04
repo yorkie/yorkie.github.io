@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "preinstall": "sh ./pre-install.sh"
+    "preinstall": "sh ./pre-install.sh",
+    "build": "sh ./build.sh"
   },
   "engines": {
     "node": "0.10.x"

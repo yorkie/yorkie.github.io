@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-browserify -r assert lib/home.js > script/home.js
+browserify    \
+  -r assert   \
+  -r markdown \
+  lib/home.js > script/home.js
