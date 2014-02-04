@@ -9,17 +9,49 @@
 </head>
 
 <body>
-  <div class="row">
-    <div class="col-md-3 col-md-offset-2">
-      <img src="/styles/images/under-tech.png" />
+  <!-- Header -->
+  <div class="row header-wrapper">
+    <div class="col-md-2 col-md-offset-3">
+      <img src="/styles/images/author.png" />
     </div>
     <div class="col-md-5">
-      <ul>
-        <li>posts</li>
-        <li>family</li>
-      </ul>
+      <img src="/styles/images/slogon.png" />
     </div>
   </div>
+
+  <!-- Content -->
+  <div class="row post-wrapper">
+    <div class="col-md-8 col-md-offset-2 post">
+      <header>
+        <div class="post-title">Introduction to QUIP</div>
+        <div class="post-date">Sun Dec 8 16:14:47 2013 -0800</div>
+      </header>
+      <section class="col-md-10 col-md-offset-1">
+        <p>Quip still use similar token rules to Javascript, so large number of rules is javascript's rules. All rules is defined in https://github.com/yorkie/quip/blob/master/src/token.h#L17-L77</p>
+        <p>This issue would be a documentation to specify the meaning of every tokens:</p>
+        <p>ILLEGAL: shows that an invalided syntax, this might be an error in runtime, for example, a special character like ^ maybe illegal.</p>
+        <p>EOS: is short for End of Source, Yes, it means the program has eat up the source file, and related files.</p>
+        <p>NEWLINE: in literal, it means that a new line.</p>
+      </section>
+    </div>
+  </div>
+
+  <div class="row post-wrapper">
+    <div class="col-md-8 col-md-offset-2 post">
+      <header>
+        <div class="post-title">SIGKILL</div>
+        <div class="post-date">Sun Dec 8 16:14:47 2013 -0800</div>
+      </header>
+      <section class="col-md-10 col-md-offset-1">
+        <p>The problem is about forever. While using this module to start a script, everything is OK, at an opposite of this operation, everything is not pretty good. Following simple codes is an example.</p>
+        <p>At 1st time, I did a lookup in forever, then I found it stop a script or process by killing it, namely call the signal named SIGKILL. Codes is fixed on: nodejitsu/forever-monitor</p>
+        <p>I was actually thinking that the full success would be coming, such that I coded this:</p>
+        <p>Fool, fuck self-confidence.</p>
+        <p>Had googled some blogs, I realized this way is absolutely wrong. I cannot handle the SIGKILL, It's an absolute quit system signal, then I know why forever stop scripts by this way. But what is this problem's solution? Of course I find an answer to solve it, like that.</p>
+      </section>
+    </div>
+  </div>
+
 </body>
 </html>
 <script type="text/javascript" src="script/home.js"></script>

@@ -1,4 +1,51 @@
 
+/* Define Font */
+
+@font-face {
+  font-family: Electrolize-Regular;
+  src: url("/styles/fonts/Electrolize-Regular.woff");
+}
+
+
+/* Styles */
+
 body {
-  background: ;
+  background: #223034;
+}
+
+.header-wrapper {
+  margin: 50px 0 50px 0;
+}
+
+.post {
+  background: #d7f1f1;
+  padding: 0;
+  margin-bottom: 50px;
+}
+
+.post header {
+  background: #135b6f;
+  color: #fff;
+  font-family: "Electrolize-Regular";
+  padding: 10px 20px;
+  position: relative;
+}
+
+.post section {
+  font-family: "Electrolize-Regular";
+  font-size: 16px;
+  line-height: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.post-title {
+  font-size: 26px;
+}
+
+.post-date {
+  position: absolute;
+  font-size: 20px;
+  top: 15px;
+  right: 10px;
 }
