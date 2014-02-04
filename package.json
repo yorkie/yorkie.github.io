@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "my site",
   "main": "index.js",
+  "dependencies": {
+    "markdown": "*"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "sh ./pre-install.sh"

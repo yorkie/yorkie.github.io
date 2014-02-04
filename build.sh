@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-browserify -r assert -r ./lib/home.js > script/home.js
+browserify -r assert lib/home.js > script/home.js
