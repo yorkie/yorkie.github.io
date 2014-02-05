@@ -3,11 +3,18 @@
 # markdown part
 echo "start to generate .html from .md files"
 
+flag=1
 catalog="[\n\t"
 for path in posts/*.md ; do
   name="${path%.*}"
   date=`stat -f '%Sm' $path`
   gfm2html $path $name.html
+
+  if [ $flag -eq 1 ]; then
+    flag=0
+  else
+    catalog=$catalog",\n\t"
+  fi
 
   catalog=$catalog"{\n
     \t\t\"title\": \"$(basename $name)\",\n
