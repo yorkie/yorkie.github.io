@@ -2,7 +2,11 @@
 
 var fs = require('fs');
 var jade = require('jade');
+
 var catalog = require('./catalog.json');
+catalog.forEach(function(post) {
+  post.html = fs.readFileSync(post.path, 'utf8');
+})
 
 var html = jade.renderFile('./templates/home.jade', {
   'title': 'Under Tech.',
