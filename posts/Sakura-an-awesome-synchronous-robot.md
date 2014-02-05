@@ -1,7 +1,9 @@
 
 # Sakura - an awesome synchronous robot
 
-I am always looking for an easy way to manage my posts, and have to try large numbers of blog tools, but still annoyed by this problem until Sakura borned now.
+I am always looking for an easy way to manage my posts, and have to try large numbers of blog tools, but still annoyed by this problem until Sakura was borned now.
+
+![sakura](/styles/images/sakura-1.jpg)
 
 Sakura is incomplete as a synchronous rebot, however it has been easy enough for us.
 You might post your thoughts in markdown like what I'm doing now, then just push your post to [github.com](https://github.com), Sakura would generate website automaticly.
