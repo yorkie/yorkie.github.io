@@ -8,15 +8,21 @@ for path in posts/*.md ; do
   name="${path%.*}"
   date=`stat -f '%Sm' $path`
   md2html $path > $name.html
+
+  content=`cat $name.html`
   catalog=$catalog'
   {
-    "name": "'$(basename $name)'",
+    "title": "'$(basename $name)'",
     "path": "'$name.html'",
-    "date": "'$date'"
+    "date": "'$date'",
+    "content": "'$content'"
   }'
 done
 catalog=$catalog']'
 echo $catalog > catalog.json
+
+# generate homepage
+./genhomepage
 
 # browserify progress
 echo "start to browserify..."

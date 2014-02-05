@@ -1,1 +1,1 @@
-[ { "name": "test", "path": "posts/test.html", "date": "Feb 5 13:15:21 2014" }]
+[ { "title": "test", "path": "posts/test.html", "date": "Feb 5 15:40:39 2014", "content": "<h1>test</h1> <p><code>js var x = 10; </code></p>" }]

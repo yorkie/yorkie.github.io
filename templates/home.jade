@@ -1,0 +1,29 @@
+
+doctype html
+html(lang="en")
+
+  head
+    title=title
+    link(rel="stylesheet", type="text/css", href="/styles/css/bootstrap.min.css")
+    link(rel="stylesheet", type="text/css", href="/styles/css/bootstrap-theme.min.css")
+    link(rel="stylesheet", type="text/css", href="/styles/css/home.css")
+
+  body
+
+    //- header
+    .row.header-wrapper
+      .col-md-2.col-md-offset-3
+        img(src="/styles/images/author.png")
+      .col-md-5
+        img(src="/styles/images/slogon.png")
+
+    //- post
+    each post in posts
+      .row.post-wrapper
+        .col-md-8.col-md-offset-2.post
+          header
+            .post-title #{post.title}
+            .post-date  #{post.date}
+          section.col-md-10.col-md-offset-1
+            p!= post.content
+            

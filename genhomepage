@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var jade = require('jade');
+var catalog = require('./catalog.json');
+
+var html = jade.renderFile('./templates/home.jade', {
+  'title': 'Under Tech.',
+  'posts': catalog
+});
+fs.writeFileSync('index.html', html);
