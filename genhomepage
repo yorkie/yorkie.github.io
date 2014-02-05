@@ -7,7 +7,7 @@ var catalog = require('./catalog.json').sort(function(prev, next) {
   return new Date(next.date) - new Date(prev.date);
 }).map(function(post) {
   post.html = fs.readFileSync(post.path, 'utf8');
-  return post
+  return post;
 })
 
 var html = jade.renderFile('./templates/home.jade', {
