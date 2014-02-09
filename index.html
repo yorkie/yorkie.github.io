@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><title>Under Tech.</title><link rel="stylesheet" type="text/css" href="/styles/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="/styles/css/bootstrap-theme.min.css"><link rel="stylesheet" type="text/css" href="/styles/css/home.css"></head><body><div class="row header-wrapper"><div class="col-md-2 col-md-offset-3"><img src="/styles/images/author.png"></div><div class="col-md-5"><img src="/styles/images/slogon.png"></div></div><div class="row post-wrapper"><div class="col-md-8 col-md-offset-2 post"><header><div class="post-title">how-do-i-write-a-module</div><div class="post-date"> Feb 9 20:27:52 2014</div></header><section class="col-md-10 col-md-offset-1"><p><!doctype html>
+<!DOCTYPE html><html lang="en"><head><title>Under Tech.</title><link rel="stylesheet" type="text/css" href="/styles/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="/styles/css/bootstrap-theme.min.css"><link rel="stylesheet" type="text/css" href="/styles/css/home.css"></head><body><div class="row header-wrapper"><div class="col-md-2 col-md-offset-3"><img src="/styles/images/author.png"></div><div class="col-md-5"><img src="/styles/images/slogon.png"></div></div><div class="row post-wrapper"><div class="col-md-8 col-md-offset-2 post"><header><div class="post-title">how-do-i-write-a-module</div><div class="post-date"> Feb 9 20:32:22 2014</div></header><section class="col-md-10 col-md-offset-1"><p><!doctype html>
 <!-- Created with GFM2HTML: https://github.com/rvagg/gfm2html -->
 <html lang="en">
   <head>
@@ -318,13 +318,13 @@ pre code, pre tt {
 </ul>
 <div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /path/your-module/.git/hooks
 <span class="nv">$ </span>vi pre-push
-<span class="err">$</span>
-<span class="nv">$ </span><span class="nb">echo</span> <span class="s1">&#39;#!/usr/bin/env bash</span>
-<span class="s1">&gt; npm publish --force&#39;</span> <span class="p">|</span> cat &gt; pre-push
-<span class="err">$</span>
-<span class="nv">$ </span>chmod +x pre-push
 </pre></div>
 
+<p>Then copy this to your <code>vi</code> screen:</p>
+<pre><code>#!/usr/bin/env bash
+npm publish --force</code></pre>
+<p>Saved it, and back to terminal:</p>
+<pre><code>$ chmod +x pre-push</code></pre>
 <p>Then when you pushed code to github, it would sync them to npm automaticly.</p>
 </div>
     </div>
