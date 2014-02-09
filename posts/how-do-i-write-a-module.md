@@ -11,10 +11,16 @@ Hello, there. Today I would show you how I do write a node module, just by givin
 ```bash
 $ cd /path/your-module/.git/hooks
 $ vi pre-push
-$
-$ echo '#!/usr/bin/env bash
-> npm publish --force' | cat > pre-push
-$
+```
+
+Then copy this to your `vi` screen:
+```
+#!/usr/bin/env bash
+npm publish --force
+```
+
+Saved it, and back to terminal:
+```
 $ chmod +x pre-push
 ```
 
