@@ -22,7 +22,7 @@ html(lang="en")
       .row.post-wrapper
         .col-md-8.col-md-offset-2.post
           header
-            .post-title #{post.title}
+            a.post-title(href="/dist/#{post.title}") #{post.title}
             .post-date  #{post.date}
           section.col-md-10.col-md-offset-1
             p!= post.html
