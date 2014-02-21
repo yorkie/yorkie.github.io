@@ -8,24 +8,37 @@ var trie = new natural.Trie(false);
 var tokenizer = new natural.WordTokenizer();
 trie.addStrings(require('./tags.json'));
 
+var tagsMap = {};
 var catalog = require('./catalog.json').sort(function(prev, next) {
   return new Date(next.date) - new Date(prev.date);
 }).map(function(post) {
-  var dups = {};
+  var mytags = {};
   var html = post.html = fs.readFileSync(post.path, 'utf8');
   var tags = tokenizer.tokenize(html).filter(function(token) {
-    if (trie.contains(token) && !dups[token]) {
-      dups[token] = 1;
+    if (trie.contains(token) && !mytags[token]) {
+      mytags[token] = true;
       return true;
+    } else {
+      return false;
     }
-    if (dups[token]) {
-      dups[token]++;
-    }
-    return false;
   });
+
+  Object.keys(mytags).forEach(function(tag) {
+    if (!tagsMap[tag])
+      tagsMap[tag] = [post];
+    else
+      tagsMap[tag].push(post);
+  })
 
   post.tags = tags;
   return post;
+})
+
+Object.keys(tagsMap).forEach(function(tag) {
+  fs.writeFileSync('./tags/'+tag+'.html', jade.renderFile('./templates/home.jade', {
+    'title': 'Under Tech - '+tag,
+    'posts': tagsMap[tag]
+  }));
 })
 
 var html = jade.renderFile('./templates/home.jade', {
