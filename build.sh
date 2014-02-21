@@ -8,7 +8,7 @@ catalog="[\n\t"
 for path in posts/*.md ; do
   name="${path%.*}"
   date=`stat -f '%Sm' $path`
-  gfm2html $path $name.html
+  gfm2html $path dist/$(basename $name).html
 
   if [ $flag -eq 1 ]; then
     flag=0
@@ -18,7 +18,7 @@ for path in posts/*.md ; do
 
   catalog=$catalog"{\n
     \t\t\"title\": \"$(basename $name)\",\n
-    \t\t\"path\": \"$name.html\",\n
+    \t\t\"path\": \"dist/$(basename $name).html\",\n
     \t\t\"date\": \"$date\"\n
   \t}"
 done

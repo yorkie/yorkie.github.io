@@ -1,17 +1,17 @@
 [
 	{
  		"title": "SIGKILL",
- 		"path": "posts/SIGKILL.html",
+ 		"path": "dist/SIGKILL.html",
  		"date": "Feb 5 17:29:14 2014"
  	},
 	{
  		"title": "Sakura-an-awesome-synchronous-robot",
- 		"path": "posts/Sakura-an-awesome-synchronous-robot.html",
+ 		"path": "dist/Sakura-an-awesome-synchronous-robot.html",
  		"date": "Feb 5 20:40:59 2014"
  	},
 	{
  		"title": "how-do-i-write-a-module",
- 		"path": "posts/how-do-i-write-a-module.html",
+ 		"path": "dist/how-do-i-write-a-module.html",
  		"date": "Feb 9 20:32:22 2014"
  	}
 ]
