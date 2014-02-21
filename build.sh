@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # markdown part
 echo "start to generate .html from .md files"
 
