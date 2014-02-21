@@ -4,6 +4,7 @@
   "description": "my site",
   "main": "index.js",
   "dependencies": {
+    "natural": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

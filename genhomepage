@@ -2,11 +2,29 @@
 
 var fs = require('fs');
 var jade = require('jade');
+var natural = require('natural');
+
+var trie = new natural.Trie(false);
+var tokenizer = new natural.WordTokenizer();
+trie.addStrings(require('./tags.json'));
 
 var catalog = require('./catalog.json').sort(function(prev, next) {
   return new Date(next.date) - new Date(prev.date);
 }).map(function(post) {
-  post.html = fs.readFileSync(post.path, 'utf8');
+  var dups = {};
+  var html = post.html = fs.readFileSync(post.path, 'utf8');
+  var tags = tokenizer.tokenize(html).filter(function(token) {
+    if (trie.contains(token) && !dups[token]) {
+      dups[token] = 1;
+      return true;
+    }
+    if (dups[token]) {
+      dups[token]++;
+    }
+    return false;
+  });
+
+  post.tags = tags;
   return post;
 })
 
