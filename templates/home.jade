@@ -26,7 +26,6 @@ html(lang="en")
             .post-date  #{post.date}
           section.col-md-10.col-md-offset-1
             p!= post.html
-          footer
             each tag in post.tags
-              a.label.label-primary(href="/tags/#{tag}") #{tag}
+              a.label.label-primary(href="/tags/#{tag}", style="margin-right:5px") #{tag}
             
