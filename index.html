@@ -1,4 +1,383 @@
-<!DOCTYPE html><html lang="en"><head><title>Under Tech.</title><link rel="stylesheet" type="text/css" href="/styles/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="/styles/css/bootstrap-theme.min.css"><link rel="stylesheet" type="text/css" href="/styles/css/home.css"></head><body><div class="row header-wrapper"><div class="col-md-2 col-md-offset-3"><img src="/styles/images/author.png"></div><div class="col-md-5"><img src="/styles/images/slogon.png"></div></div><div class="row post-wrapper"><div class="col-md-8 col-md-offset-2 post"><header><a href="/dist/how-do-i-write-a-module" style="color:#fff" class="post-title">how-do-i-write-a-module</a><div class="post-date"> Feb 9 20:32:22 2014</div></header><section class="col-md-10 col-md-offset-1"><p><!doctype html>
+<!DOCTYPE html><html lang="en"><head><title>Under Tech.</title><link rel="stylesheet" type="text/css" href="/styles/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="/styles/css/bootstrap-theme.min.css"><link rel="stylesheet" type="text/css" href="/styles/css/home.css"></head><body><div class="row header-wrapper"><div class="col-md-2 col-md-offset-3"><img src="/styles/images/author.png"></div><div class="col-md-5"><img src="/styles/images/slogon.png"></div></div><div class="row post-wrapper"><div class="col-md-8 col-md-offset-2 post"><header><a href="/dist/core-dump-tutorial" style="color:#fff" class="post-title">core-dump-tutorial</a><div class="post-date"> Feb 26 22:36:01 2014</div></header><section class="col-md-10 col-md-offset-1"><p><!doctype html>
+<!-- Created with GFM2HTML: https://github.com/rvagg/gfm2html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="created-with" content="https://github.com/rvagg/gfm2html">
+
+    <style type="text/css">/* most of normalize.css */
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}[hidden],template{display:none;}html{font-family:sans-serif;/*1*/-ms-text-size-adjust:100%;/*2*/-webkit-text-size-adjust:100%;/*2*/}body{margin:0;}a{background:transparent;}a:focus{outline:thindotted;}a:active,a:hover{outline:0;}h1{font-size:2em;margin:0.67em0;}abbr[title]{border-bottom:1pxdotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em;}pre{white-space:pre-wrap;}q{quotes:"\201C""\201D""\2018""\2019";}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}img{border:0;}svg:not(:root){overflow:hidden;}table{border-collapse:collapse;border-spacing:0;}
+
+html {
+  font: 14px 'Helvetica Neue', Helvetica, arial, freesans, clean, sans-serif;
+}
+
+.container {
+  line-height: 1.6;
+  color: #333;
+  border-radius: 3px;
+  padding: 3px;
+  width: 790px;
+  margin: 10px auto;
+}
+
+.body-content {
+  padding: 30px;
+}
+
+.body-content > *:first-child {
+  margin-top: 0 !important;
+}
+
+a, a:visited {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+  .markdown-body h1
+, .markdown-body h2
+, .markdown-body h3
+, .markdown-body h4
+, .markdown-body h5
+, .markdown-body h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #000;
+  border-bottom: 1px solid #ddd;
+}
+
+h2 {
+  font-size: 2em;
+  border-bottom: 1px solid #eee;
+  color: #000;
+}
+
+img {
+  max-width: 100%;
+}
+
+hr {
+  background: transparent url("/img/hr.png") repeat-x 0 0;
+  border: 0 none;
+  color: #ccc;
+  height: 4px;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+th {
+  font-weight: bold;
+}
+
+blockquote {
+  border-left: 4px solid #ddd;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote > :last-child, blockquote > :first-child {
+  margin-bottom: 0px;
+}
+
+pre, code {
+  font-size: 13px;
+  font-family: 'UbuntuMono', monospace;
+  white-space: nowrap;
+  margin: 0px 2px;
+  padding: 0px 5px;
+  border: 0px;
+  background-color: #ffffff;
+  border-radius: 1px;
+}
+
+pre > code {
+  white-space: pre;
+}
+
+pre {
+  overflow-x: auto;
+  white-space: pre;
+  padding: 10px;
+  line-height: 150%;
+  background-color: #fff;
+}
+
+pre code, pre tt {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  border: none;
+}
+
+  .highlight .c
+, .highlight .cm
+, .highlight .cp
+, .highlight .c1 {
+    color:#999988;
+    font-style:italic;
+}
+
+.highlight .err {
+  color:#a61717;
+  background-color:#e3d2d2
+}
+
+  .highlight .o
+, .highlight .gs
+, .highlight .kc
+, .highlight .kd
+, .highlight .kn
+, .highlight .kp
+, .highlight .kr {
+    font-weight:bold
+}
+
+.highlight .cs {
+  color:#999999;
+  font-weight:bold;
+  font-style:italic
+}
+
+.highlight .gd {
+  color:#000000;
+  background-color:#ffdddd
+}
+
+.highlight .gd .x {
+  color:#000000;
+  background-color:#ffaaaa
+}
+
+.highlight .ge {
+  font-style:italic
+}
+
+  .highlight .gr
+, .highlight .gt {
+    color:#aa0000
+}
+
+  .highlight .gh
+, .highlight .bp {
+    color:#999999
+}
+
+.highlight .gi {
+  color:#000000;
+  background-color:#ddffdd
+}
+
+.highlight .gi .x {
+  color:#000000;
+  background-color:#aaffaa
+}
+
+.highlight .go {
+  color:#888888
+}
+
+  .highlight .gp
+, .highlight .nn {
+    color:#555555
+}
+
+
+.highlight .gu {
+  color:#800080;
+  font-weight:bold
+}
+
+
+.highlight .kt {
+  color:#445588;
+  font-weight:bold
+}
+
+  .highlight .m
+, .highlight .mf
+, .highlight .mh
+, .highlight .mi
+, .highlight .mo
+, .highlight .il {
+    color:#009999
+}
+
+  .highlight .s
+, .highlight .sb
+, .highlight .sc
+, .highlight .sd
+, .highlight .s2
+, .highlight .se
+, .highlight .sh
+, .highlight .si
+, .highlight .sx
+, .highlight .s1 {
+    color:#d14
+}
+
+.highlight .n {
+  color:#333333
+}
+
+  .highlight .na
+, .highlight .no
+, .highlight .nv
+, .highlight .vc
+, .highlight .vg
+, .highlight .vi
+, .highlight .nb {
+    color:#0086B3
+}
+
+.highlight .nc {
+  color:#445588;
+  font-weight:bold
+}
+
+.highlight .ni {
+  color:#800080
+}
+
+  .highlight .ne
+, .highlight .nf {
+    color:#990000;
+    font-weight:bold
+}
+
+.highlight .nt {
+  color:#000080
+}
+
+.highlight .ow {
+  font-weight:bold
+}
+
+.highlight .w {
+  color:#bbbbbb
+}
+
+.highlight .sr {
+  color:#009926
+}
+
+.highlight .ss {
+  color:#990073
+}
+
+.highlight .gc {
+  color:#999;
+  background-color:#EAF2F5
+}
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="body-content"><h1 id="core-dump-tutorial">Core Dump Tutorial</h1>
+<p>Hi, my readers, I shall do share a little experience about a debugging tip with you.
+As you have seen, what I want to tell you about is core dump. Stuff beforehand, we need
+make a description for u about what is the core dump.</p>
+<blockquote>
+<p>In computing, a core dump (in Unix parlance), memory dump, or system dump[1] 
+consists of the recorded state of the working memory of a computer program 
+at a specific time, generally when the program has terminated abnormally 
+(crashed).</p>
+</blockquote>
+<p>Yes, core dump is an awesome tool that provides traces of a program in Runtime, especially
+in production.</p>
+<p>And then, I will show you a total usage of core dump in MacOS.</p>
+<h3 id="write-a-program-that-maybe-crushed-and-after-that-would-create-a-core-dump-file">Write a program that maybe crushed and after that would create a core dump file</h3>
+<p>See <a href="https://developer.apple.com/library/mac/documentation/darwin/reference/manpages/man2/sigaction.2.html#//apple_ref/doc/man/2/sigaction">signals table</a> first, then we know a signal like SIGQUIT(3), SIGILL(4),
+SIGTRAP(5) and others could occured OS would create a core image what we need.</p>
+<p>Then we create a source file named <code>core-dump-file.c</code>:</p>
+<div class="highlight"><pre><span class="cp">#include &lt;unistd.h&gt;</span>
+<span class="cp">#include &lt;signal.h&gt;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">pid_t</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">getpid</span><span class="p">();</span>
+  <span class="n">kill</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>And compiling it and run:</p>
+<div class="highlight"><pre><span class="nv">$ </span>gcc core-dump-file.c -o core-dump-file
+<span class="nv">$ </span>./core-dump-file
+</pre></div>
+
+<p>Next, we get a output <code>Quit: 3</code>, everything is ok, right?</p>
+<h3 id="enable-core-dump-in-your-os">Enable Core Dump in your OS</h3>
+<p>Actually I want to say no, in this <a href="https://developer.apple.com/library/mac/documentation/darwin/reference/manpages/man5/core.5.html">OSX man page</a>, we see:</p>
+<blockquote>
+<p>This memory image is written to a file named by default core.pid, where pid is the
+process ID of the process, in the /cores directory, provided the terminated process 
+had write permis-sion permissionsion in the directory, and the directory existed.</p>
+</blockquote>
+<p>What we really expected is we can find a core dump file once my program is crushed within a specified
+signal. However just example, we could not find any files in <code>/cores/</code>, that is incorrect behavior.</p>
+<p>The reason is that we have ever not enabled core dump in our OSX. Just run below:</p>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">ulimit</span> -c
+&gt; 0
+<span class="nv">$ </span><span class="nb">ulimit</span> -c unlimited
+<span class="nv">$ </span><span class="nb">ulimit</span> -c
+&gt; unlimited
+</pre></div>
+
+<p>All right, then again run <code>./core-dump-file</code>, you would get a different output like:</p>
+<div class="highlight"><pre>Quit: 3 <span class="o">(</span>core dumped<span class="o">)</span>
+</pre></div>
+
+<h3 id="-lldb-gdb-and-core-dump"><code>lldb/gdb</code> and Core Dump</h3>
+<p>In the end, we just run below command:</p>
+<div class="highlight"><pre><span class="nv">$ </span>lldb ./core-dump-file /cores/core.19504
+</pre></div>
+
+<p>Now we could get a trace log of your just curshed program.
+This is a best functional practice once your programs have crushed in production environment.</p>
+<h3 id="refs">Refs</h3>
+<ol>
+<li><a href="https://developer.apple.com/library/mac/documentation/darwin/reference/manpages/man5/core.5.html">Core Man Page in OSX</a></li>
+<li><a href="http://pfigue.github.io/blog/2012/12/28/where-is-my-core-dump-archlinux/">Where is my core dump?</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Core_dump">Core dump - Wikipedia, the free encyclopedia</a></li>
+</ol>
+</div>
+    </div>
+  </body>
+</html></p><span>Tags:&nbsp;</span><a href="/tags/github" style="margin-right:5px;color:#fff" class="label label-primary">github</a><a href="/tags/production" style="margin-right:5px;color:#fff" class="label label-primary">production</a></section></div></div><div class="row post-wrapper"><div class="col-md-8 col-md-offset-2 post"><header><a href="/dist/how-do-i-write-a-module" style="color:#fff" class="post-title">how-do-i-write-a-module</a><div class="post-date"> Feb 9 20:32:22 2014</div></header><section class="col-md-10 col-md-offset-1"><p><!doctype html>
 <!-- Created with GFM2HTML: https://github.com/rvagg/gfm2html -->
 <html lang="en">
   <head>

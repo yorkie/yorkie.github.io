@@ -10,6 +10,11 @@
  		"date": "Feb 5 20:40:59 2014"
  	},
 	{
+ 		"title": "core-dump-tutorial",
+ 		"path": "dist/core-dump-tutorial.html",
+ 		"date": "Feb 26 22:36:01 2014"
+ 	},
+	{
  		"title": "how-do-i-write-a-module",
  		"path": "dist/how-do-i-write-a-module.html",
  		"date": "Feb 9 20:32:22 2014"
