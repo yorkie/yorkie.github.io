@@ -65,7 +65,7 @@ All right, then again run `./core-dump-file`, you would get a different output l
 Quit: 3 (core dumped)
 ```
 
-### `lldb/gdb` and Core Dump
+### lldb/gdb and Core Dump
 
 In the end, we just run below command:
 ```sh
