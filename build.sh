@@ -8,6 +8,7 @@ for path in posts/*.md ; do
   name="${path%.*}"
   date=`stat -f '%Sm' $path`
   gfm2html $path dist/$(basename $name).html
+  echo "* dist/$(basename $name) generated"
 
   if [ $flag -eq 1 ]; then
     flag=0
@@ -26,6 +27,7 @@ echo $catalog > catalog.json
 
 # generate homepage
 ./genhomepage
+echo "* homepage generated"
 
 # browserify progress
 #echo "start to browserify..."
@@ -33,4 +35,4 @@ echo $catalog > catalog.json
 #  -r assert   \
 #  lib/home.js > script/home.js
 
-echo "done!"
+echo "* done!"

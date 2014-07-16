@@ -2,21 +2,26 @@
 	{
  		"title": "SIGKILL",
  		"path": "dist/SIGKILL.html",
- 		"date": "Feb 5 17:29:14 2014"
+ 		"date": "Jul 7 16:36:33 2014"
  	},
 	{
  		"title": "Sakura-an-awesome-synchronous-robot",
  		"path": "dist/Sakura-an-awesome-synchronous-robot.html",
- 		"date": "Feb 5 20:40:59 2014"
+ 		"date": "Jul 7 16:36:33 2014"
  	},
 	{
  		"title": "core-dump-tutorial",
  		"path": "dist/core-dump-tutorial.html",
- 		"date": "Feb 26 22:40:38 2014"
+ 		"date": "Jul 7 16:36:33 2014"
  	},
 	{
  		"title": "how-do-i-write-a-module",
  		"path": "dist/how-do-i-write-a-module.html",
- 		"date": "Feb 9 20:32:22 2014"
+ 		"date": "Jul 7 16:36:33 2014"
+ 	},
+	{
+ 		"title": "the-keyword-let-in-rust",
+ 		"path": "dist/the-keyword-let-in-rust.html",
+ 		"date": "Jul 17 00:07:59 2014"
  	}
 ]
