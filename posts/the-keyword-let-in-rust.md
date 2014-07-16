@@ -1,5 +1,5 @@
 
-The keyword `let` in Rust
+The keyword let in Rust
 =========================
 
 The programming keyword `let` is basic and useful, but very fallible, the reason I’ll show you later.
