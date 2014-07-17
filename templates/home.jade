@@ -23,7 +23,7 @@ html(lang="en")
         .col-md-8.col-md-offset-2.post
           header
             a.post-title(href="/dist/#{post.title}",style="color:#fff") #{post.title}
-            .post-date  #{post.date}
+            .post-date.hidden-xs  #{post.date}
           section.col-md-10.col-md-offset-1
             p!= post.html
             span Tags:&nbsp;
