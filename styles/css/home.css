@@ -17,6 +17,10 @@ body {
   margin: 50px 0 50px 0;
 }
 
+.post-wrapper {
+  margin-right: 0;
+}
+
 .post {
   background: #d7f1f1;
   padding: 0;
