@@ -45,7 +45,13 @@ body {
 }
 
 .post-title {
+  color: #fff;
   font-size: 26px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 60%;
+  white-space: nowrap;
 }
 
 .post-date {
