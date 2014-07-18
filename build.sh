@@ -6,7 +6,10 @@ flag=1
 catalog="[\n\t"
 for path in posts/*.md ; do
   name="${path%.*}"
-  date=`stat -f '%Sm' $path`
+  date=`git log $path | awk '/Date/ {\
+    print $2, $3, $4, $5, $6; \
+    exit; \
+  }'`
   gfm2html $path dist/$(basename $name).html
   echo "* dist/$(basename $name) generated"
 
