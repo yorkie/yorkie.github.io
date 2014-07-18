@@ -15,6 +15,7 @@ var catalog = require('./catalog.json').sort(function(prev, next) {
   var mytags = {};
   var html = post.html = fs.readFileSync(post.path, 'utf8');
   var tags = tokenizer.tokenize(html).filter(function(token) {
+    token = token.toLowerCase();
     if (trie.contains(token) && !mytags[token]) {
       mytags[token] = true;
       return true;
