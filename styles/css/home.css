@@ -45,7 +45,7 @@ body {
 }
 
 .post-title {
-  color: #fff;
+  color: #fff !important;
   font-size: 26px;
   display: inline-block;
   overflow: hidden;
