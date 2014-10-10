@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><title>Under Tech - rust</title><link rel="stylesheet" type="text/css" href="/styles/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="/styles/css/bootstrap-theme.min.css"><link rel="stylesheet" type="text/css" href="/styles/css/home.css"></head><body class="container"><div class="row header-wrapper hidden-xs"><div class="col-md-2 col-md-offset-3"><img src="/styles/images/author.png"></div><div class="col-md-5"><img src="/styles/images/slogon.png"></div></div><div class="row post-wrapper"><div class="col-md-8 col-md-offset-2 post"><header><a href="/dist/the-keyword-let-in-rust" title="the-keyword-let-in-rust" class="post-title">the-keyword-let-in-rust</a><div class="post-date hidden-xs"> Fri Jul 18 22:07:31 2014</div></header><section class="col-md-10 col-md-offset-1"><p><!doctype html>
+<!doctype html>
 <!-- Created with GFM2HTML: https://github.com/rvagg/gfm2html -->
 <html lang="en">
   <head>
@@ -308,34 +308,46 @@ pre code, pre tt {
   </head>
   <body>
     <div class="container">
-      <div class="body-content"><h1 id="the-keyword-let-in-rust">The keyword let in Rust</h1>
-<p>The programming keyword <code>let</code> is basic and useful, but very fallible, the reason I’ll show you later.</p>
-<h2 id="how-it-works-in-javascript-">How it works in Javascript?</h2>
-<p>In Javascript, we use <code>var</code> to define our variable and constants(actually there is no real constants in javascript), very simple, but to state one key point to you:</p>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+      <div class="body-content"><h1 id="how-to-inject-dom-to-gmail-s-user-card">How to inject DOM to GMail&#39;s user card</h1>
+<p>I was working on chrome plugin for GMail in this week, and at first I&#39;m assigned
+to make a tooltip that&#39;s shown when an email address is mouse over, and hidden once
+move out of that element.</p>
+<p>The interaction is same to gmail&#39;s user card, so if I was following this, it may be
+mess to users because of two &quot;card&quot; that will be shown simultaneously.</p>
+<p>Ok, This is the problem that I met in this week, let&#39;s address the issue more gracefully.</p>
+<h3 id="caveat">Caveat</h3>
+<p>Gmail&#39;s user card is an <code>iframe</code> tag within a different domain from gmail&#39;s like below:</p>
+<ul>
+<li>Gmail: mail.google.com</li>
+<li>UserCard: apis.google.com</li>
+</ul>
+<p>So when you try to access that anything in the cross-domain iframe&#39;s document by:</p>
+<div class="highlight"><pre><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#cross-iframe-id&#39;</span><span class="p">).</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nb">document</span><span class="p">;</span>
 </pre></div>
 
-<p>we could use x and y totally, let us see what happened in these 3 lines.</p>
-<p>line 1: specify a variable x, then assign the value 10 to it, in our memory, it apply for blocks to do this.</p>
-<p>line 2: specify a variable y, then read the value of previous variable x, copy it to the memory of variable, then come so far we will spend 2x blocks to save the same value, it looks you do sleep in two beds, so luxurious, right?</p>
-<p>This is not the failure of Javascript, in fact in C-style language family, all the members always looks so wasteful.</p>
-<h2 id="how-it-works-in-rust-">How it works in Rust?</h2>
-<pre><code>let x = 10;
-let y = x;
-print!(&quot;x:{}&quot;, x);</code></pre>
-<p>The line 3 could not be executed correctly, because the x has been moved to y, please notice this: rust does move, not copy.</p>
-<p>It indicates the program only waste 1x(itself) blocks in memory, that’s the reason why I think the program written by rust is better than other languages.</p>
-<p>At my beginner of learning rust, this feature(bug at that time) impede me more or less, I think you are, too, then next section, I wanna show you how to skip this hinder, and then enjoy the fun with Rust.</p>
-<h2 id="tip-take-your-brain-out-first-and-then-in-something-about-rust">Tip: take your brain out first and then in something about Rust</h2>
-<p>Yeah, you must change your brain in a way, I can compare this problem to compute process.</p>
-<p>The keyword <code>var</code> is very similar with NPM, it does much redundancies IMO(In my opinion), but NPM use disk, it is cheap and easy to gain, but memory is not. Once you consider programming in this way, it is easy to skip this <code>let</code> hinder, actually the meaning of this creative way to define variable just guide us(programmers, geeks) to the right road: save your precious resouces ASAP.</p>
-<h2 id="end">End</h2>
-<p>Rust ever has amount number of features that introduced by its developers, however the language is going, it is valuable to you.</p>
-<p>Rust Language: <a href="http://rust-lang.org"><a href="http://rust-lang.org">http://rust-lang.org</a></a></p>
-<p>Github: <a href="https://github.com/rust-lang/rust"><a href="https://github.com/rust-lang/rust">https://github.com/rust-lang/rust</a></a></p>
+<p>It will prints the error by chrome:</p>
+<pre><code>SecurityError: Blocked a frame with origin &quot;https://mail.google.com&quot; from accessing a cross-origin frame.</code></pre>
+<p>This is prohibited by any HTTP browsers of course included chrome, but chrome plugins are the buster.</p>
+<h3 id="plugin-permission">Plugin Permission</h3>
+<p>In <code>manifest.json</code>, I just added one domain like this:</p>
+<pre><code>{
+  ...
+  permission: [
+    &quot;*://mail.google.com/*&quot;,
+    &quot;*://apis.google.com/*&quot;
+  ],
+  ...
+}</code></pre>
+<p>Okay, then write:</p>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">usercard</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#cross-iframe-id&#39;</span><span class="p">).</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nb">document</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">usercard</span><span class="p">);</span>
+</pre></div>
+
+<p>in your plugin scripts, then run it, now you are able to get document and do any DOM injection based on
+this document such as add a line of your company name, change the card avatar etc.</p>
+<p>In fact the <code>permission</code> field will be used at firefox add-on, for more details you could visit: 
+<a href="https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/package_json">https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/package_json</a></p>
 </div>
     </div>
   </body>
-</html></p><span>Tags:&nbsp;</span><a href="/tags/github" style="margin-right:5px;color:#fff" class="label label-primary">github</a><a href="/tags/rust" style="margin-right:5px;color:#fff" class="label label-primary">rust</a></section></div></div></body></html>
+</html>
