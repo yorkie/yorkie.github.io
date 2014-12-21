@@ -1,4 +1,4 @@
-How I do add subview in angular
+How do I add subview in angular
 ================================
 
 Subview in angular 1.0 is still an issue to perplex someone, if you are someone in this case, you can direct to use [ui-router](https://github.com/angular-ui/ui-router), which should be inspired by react's state.
