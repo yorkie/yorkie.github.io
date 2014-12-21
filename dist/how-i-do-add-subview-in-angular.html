@@ -1,0 +1,345 @@
+<!doctype html>
+<!-- Created with GFM2HTML: https://github.com/rvagg/gfm2html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="created-with" content="https://github.com/rvagg/gfm2html">
+
+    <style type="text/css">/* most of normalize.css */
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}[hidden],template{display:none;}html{font-family:sans-serif;/*1*/-ms-text-size-adjust:100%;/*2*/-webkit-text-size-adjust:100%;/*2*/}body{margin:0;}a{background:transparent;}a:focus{outline:thindotted;}a:active,a:hover{outline:0;}h1{font-size:2em;margin:0.67em0;}abbr[title]{border-bottom:1pxdotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em;}pre{white-space:pre-wrap;}q{quotes:"\201C""\201D""\2018""\2019";}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}img{border:0;}svg:not(:root){overflow:hidden;}table{border-collapse:collapse;border-spacing:0;}
+
+html {
+  font: 14px 'Helvetica Neue', Helvetica, arial, freesans, clean, sans-serif;
+}
+
+.container {
+  line-height: 1.6;
+  color: #333;
+  border-radius: 3px;
+  padding: 3px;
+  width: 100%;
+  margin: 10px auto;
+}
+
+.body-content {
+  padding: 30px;
+}
+
+.body-content > *:first-child {
+  margin-top: 0 !important;
+}
+
+a, a:visited {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+  .markdown-body h1
+, .markdown-body h2
+, .markdown-body h3
+, .markdown-body h4
+, .markdown-body h5
+, .markdown-body h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #000;
+  border-bottom: 1px solid #ddd;
+}
+
+h2 {
+  font-size: 2em;
+  border-bottom: 1px solid #eee;
+  color: #000;
+}
+
+img {
+  max-width: 100%;
+}
+
+hr {
+  background: transparent url("/img/hr.png") repeat-x 0 0;
+  border: 0 none;
+  color: #ccc;
+  height: 4px;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+th {
+  font-weight: bold;
+}
+
+blockquote {
+  border-left: 4px solid #ddd;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote > :last-child, blockquote > :first-child {
+  margin-bottom: 0px;
+}
+
+pre, code {
+  font-size: 13px;
+  font-family: 'UbuntuMono', monospace;
+  white-space: nowrap;
+  margin: 0px 2px;
+  padding: 0px 5px;
+  border: 0px;
+  background-color: #ffffff;
+  border-radius: 1px;
+}
+
+pre > code {
+  white-space: pre;
+}
+
+pre {
+  overflow-x: auto;
+  white-space: pre;
+  padding: 10px;
+  line-height: 150%;
+  background-color: #fff;
+}
+
+pre code, pre tt {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  border: none;
+}
+
+  .highlight .c
+, .highlight .cm
+, .highlight .cp
+, .highlight .c1 {
+    color:#999988;
+    font-style:italic;
+}
+
+.highlight .err {
+  color:#a61717;
+  background-color:#e3d2d2
+}
+
+  .highlight .o
+, .highlight .gs
+, .highlight .kc
+, .highlight .kd
+, .highlight .kn
+, .highlight .kp
+, .highlight .kr {
+    font-weight:bold
+}
+
+.highlight .cs {
+  color:#999999;
+  font-weight:bold;
+  font-style:italic
+}
+
+.highlight .gd {
+  color:#000000;
+  background-color:#ffdddd
+}
+
+.highlight .gd .x {
+  color:#000000;
+  background-color:#ffaaaa
+}
+
+.highlight .ge {
+  font-style:italic
+}
+
+  .highlight .gr
+, .highlight .gt {
+    color:#aa0000
+}
+
+  .highlight .gh
+, .highlight .bp {
+    color:#999999
+}
+
+.highlight .gi {
+  color:#000000;
+  background-color:#ddffdd
+}
+
+.highlight .gi .x {
+  color:#000000;
+  background-color:#aaffaa
+}
+
+.highlight .go {
+  color:#888888
+}
+
+  .highlight .gp
+, .highlight .nn {
+    color:#555555
+}
+
+
+.highlight .gu {
+  color:#800080;
+  font-weight:bold
+}
+
+
+.highlight .kt {
+  color:#445588;
+  font-weight:bold
+}
+
+  .highlight .m
+, .highlight .mf
+, .highlight .mh
+, .highlight .mi
+, .highlight .mo
+, .highlight .il {
+    color:#009999
+}
+
+  .highlight .s
+, .highlight .sb
+, .highlight .sc
+, .highlight .sd
+, .highlight .s2
+, .highlight .se
+, .highlight .sh
+, .highlight .si
+, .highlight .sx
+, .highlight .s1 {
+    color:#d14
+}
+
+.highlight .n {
+  color:#333333
+}
+
+  .highlight .na
+, .highlight .no
+, .highlight .nv
+, .highlight .vc
+, .highlight .vg
+, .highlight .vi
+, .highlight .nb {
+    color:#0086B3
+}
+
+.highlight .nc {
+  color:#445588;
+  font-weight:bold
+}
+
+.highlight .ni {
+  color:#800080
+}
+
+  .highlight .ne
+, .highlight .nf {
+    color:#990000;
+    font-weight:bold
+}
+
+.highlight .nt {
+  color:#000080
+}
+
+.highlight .ow {
+  font-weight:bold
+}
+
+.highlight .w {
+  color:#bbbbbb
+}
+
+.highlight .sr {
+  color:#009926
+}
+
+.highlight .ss {
+  color:#990073
+}
+
+.highlight .gc {
+  color:#999;
+  background-color:#EAF2F5
+}
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="body-content"><h1 id="how-i-do-add-subview-in-angular">How I do add subview in angular</h1>
+<p>Subview in angular 1.0 is still an issue to perplex someone, if you are someone in this case, you can direct to use <a href="https://github.com/angular-ui/ui-router">ui-router</a>, which should be inspired by react&#39;s state.</p>
+<p>But here what I wanna share is a very small way, which you mustn&#39;t download any code from internet or learn much more docs, to implement this sub-view or sub-router by using angular directive with getter in ES6(correct me if wrong, sending email: yorkiefixer@gmail.com or hack my site).</p>
+<p>Okay, Let&#39;s start from a simple html:</p>
+<div class="highlight"><pre><span class="nt">&lt;view&gt;&lt;/view&gt;</span>
+</pre></div>
+
+<p>Here just define a directive name, feel free to change here <code>view</code> to yet another what you want.</p>
+<div class="highlight"><pre><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">&#39;ProjectHomeController&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$scope</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// home controller</span>
+<span class="p">});</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">&#39;view&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$compile</span><span class="p">,</span> <span class="nx">$routeParams</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">restrict</span><span class="o">:</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span>  <span class="c1">// here we use E</span>
+    <span class="nx">get</span> <span class="nx">templateUrl</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="s1">&#39;/partials/project-&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">$routeParams</span><span class="p">.</span><span class="nx">tab</span> <span class="o">||</span> <span class="s1">&#39;home&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.html&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">get</span> <span class="nx">controller</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="s1">&#39;Project&#39;</span> <span class="o">+</span> <span class="nx">firstUpperCase</span><span class="p">(</span><span class="nx">$routeParams</span><span class="p">.</span><span class="nx">tab</span> <span class="o">||</span> <span class="s1">&#39;home&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;Controller&#39;</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>As you has known from the above code snippet, we need to register controllers that we need to use in our sub-router or sub-view, at the other hand, <code>$routeParams.tab</code> is that I was using angular router like this:</p>
+<div class="highlight"><pre><span class="nx">$router</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="s1">&#39;/me/project/:name/:tab&#39;</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span>
+</pre></div>
+
+<p>Then if you don&#39;t use angular router or you have yet another url string, you are able to do generate your <code>templateUrl</code> and <code>controller</code> depends on browser built-in global variable <code>location.href</code> or your own <code>$routeParams</code>.</p>
+<p>Now an agile, flex and tiny router-based angular view has born from your hands, and you feel free to expand your children when he is growing, all is on you. </p>
+<p>This is open for everyone on the internet, Good luck :)</p>
+</div>
+    </div>
+  </body>
+</html>
