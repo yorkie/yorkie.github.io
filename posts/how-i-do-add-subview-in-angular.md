@@ -3,7 +3,7 @@ How do I add subview in angular
 
 Subview in angular 1.0 is still an issue to perplex someone, if you are someone in this case, you can direct to use [ui-router](https://github.com/angular-ui/ui-router), which should be inspired by react's state.
 
-But here what I wanna share is a very small way, which you mustn't download any code from internet or learn much more docs, to implement this sub-view or sub-router by using angular directive with getter in ES6(correct me if wrong, sending email: yorkiefixer@gmail.com or hack my site).
+But here what I wanna share is a very small way, which you mustn't download any code from the Internet or learn much more docs, to implement this sub-view or sub-router by using angular directive with getter in ES6(correct me if wrong, sending email: yorkiefixer@gmail.com or hack my site).
 
 Okay, Let's start from a simple html:
 
@@ -38,6 +38,6 @@ $router.when('/me/project/:name/:tab', fn)
 
 Then if you don't use angular router or you have yet another url string, you are able to do generate your `templateUrl` and `controller` depends on browser built-in global variable `location.href` or your own `$routeParams`.
 
-Now an agile, flex and tiny router-based angular view has born from your hands, and you feel free to expand your children when he is growing, all is on you. 
+Now an agile, flex and tiny router-based angular view has been born from your hands, and you feel free to expand this child when he is growing, all is on you. 
 
-This is open for everyone on the internet, Good luck :)
+This is open for everyone on the Internet, Good luck to everyone :)
