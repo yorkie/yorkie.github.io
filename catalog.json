@@ -15,6 +15,11 @@
  		"date": "Wed Feb 26 22:40:57 2014"
  	},
 	{
+ 		"title": "firedoc-a-new-doc-building-tool-compatible-with-yuidoc",
+ 		"path": "dist/firedoc-a-new-doc-building-tool-compatible-with-yuidoc.html",
+ 		"date": ""
+ 	},
+	{
  		"title": "how-do-i-write-a-module",
  		"path": "dist/how-do-i-write-a-module.html",
  		"date": "Sun Feb 9 20:32:27 2014"

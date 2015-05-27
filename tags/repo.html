@@ -325,4 +325,330 @@ You might post your thoughts in markdown like what I&#39;m doing now, then just 
 </div>
     </div>
   </body>
-</html></p><span>Tags:&nbsp;</span><a href="/tags/github" style="margin-right:5px;color:#fff" class="label label-primary">github</a><a href="/tags/repo" style="margin-right:5px;color:#fff" class="label label-primary">repo</a></section></div></div></body></html>
+</html></p><span>Tags:&nbsp;</span><a href="/tags/github" style="margin-right:5px;color:#fff" class="label label-primary">github</a><a href="/tags/repo" style="margin-right:5px;color:#fff" class="label label-primary">repo</a></section></div></div><div class="row post-wrapper"><div class="col-md-8 col-md-offset-2 post"><header><a href="/dist/firedoc-a-new-doc-building-tool-compatible-with-yuidoc" title="firedoc-a-new-doc-building-tool-compatible-with-yuidoc" class="post-title">firedoc-a-new-doc-building-tool-compatible-with-yuidoc</a><div class="post-date hidden-xs"> </div></header><section class="col-md-10 col-md-offset-1"><p><!doctype html>
+<!-- Created with GFM2HTML: https://github.com/rvagg/gfm2html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="created-with" content="https://github.com/rvagg/gfm2html">
+
+    <style type="text/css">/* most of normalize.css */
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}[hidden],template{display:none;}html{font-family:sans-serif;/*1*/-ms-text-size-adjust:100%;/*2*/-webkit-text-size-adjust:100%;/*2*/}body{margin:0;}a{background:transparent;}a:focus{outline:thindotted;}a:active,a:hover{outline:0;}h1{font-size:2em;margin:0.67em0;}abbr[title]{border-bottom:1pxdotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em;}pre{white-space:pre-wrap;}q{quotes:"\201C""\201D""\2018""\2019";}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}img{border:0;}svg:not(:root){overflow:hidden;}table{border-collapse:collapse;border-spacing:0;}
+
+html {
+  font: 14px 'Helvetica Neue', Helvetica, arial, freesans, clean, sans-serif;
+}
+
+.container {
+  line-height: 1.6;
+  color: #333;
+  border-radius: 3px;
+  padding: 3px;
+  width: 100%;
+  margin: 10px auto;
+}
+
+.body-content {
+  padding: 30px;
+}
+
+.body-content > *:first-child {
+  margin-top: 0 !important;
+}
+
+a, a:visited {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+  .markdown-body h1
+, .markdown-body h2
+, .markdown-body h3
+, .markdown-body h4
+, .markdown-body h5
+, .markdown-body h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #000;
+  border-bottom: 1px solid #ddd;
+}
+
+h2 {
+  font-size: 2em;
+  border-bottom: 1px solid #eee;
+  color: #000;
+}
+
+img {
+  max-width: 100%;
+}
+
+hr {
+  background: transparent url("/img/hr.png") repeat-x 0 0;
+  border: 0 none;
+  color: #ccc;
+  height: 4px;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+th {
+  font-weight: bold;
+}
+
+blockquote {
+  border-left: 4px solid #ddd;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote > :last-child, blockquote > :first-child {
+  margin-bottom: 0px;
+}
+
+pre, code {
+  font-size: 13px;
+  font-family: 'UbuntuMono', monospace;
+  white-space: nowrap;
+  margin: 0px 2px;
+  padding: 0px 5px;
+  border: 0px;
+  background-color: #ffffff;
+  border-radius: 1px;
+}
+
+pre > code {
+  white-space: pre;
+}
+
+pre {
+  overflow-x: auto;
+  white-space: pre;
+  padding: 10px;
+  line-height: 150%;
+  background-color: #fff;
+}
+
+pre code, pre tt {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  border: none;
+}
+
+  .highlight .c
+, .highlight .cm
+, .highlight .cp
+, .highlight .c1 {
+    color:#999988;
+    font-style:italic;
+}
+
+.highlight .err {
+  color:#a61717;
+  background-color:#e3d2d2
+}
+
+  .highlight .o
+, .highlight .gs
+, .highlight .kc
+, .highlight .kd
+, .highlight .kn
+, .highlight .kp
+, .highlight .kr {
+    font-weight:bold
+}
+
+.highlight .cs {
+  color:#999999;
+  font-weight:bold;
+  font-style:italic
+}
+
+.highlight .gd {
+  color:#000000;
+  background-color:#ffdddd
+}
+
+.highlight .gd .x {
+  color:#000000;
+  background-color:#ffaaaa
+}
+
+.highlight .ge {
+  font-style:italic
+}
+
+  .highlight .gr
+, .highlight .gt {
+    color:#aa0000
+}
+
+  .highlight .gh
+, .highlight .bp {
+    color:#999999
+}
+
+.highlight .gi {
+  color:#000000;
+  background-color:#ddffdd
+}
+
+.highlight .gi .x {
+  color:#000000;
+  background-color:#aaffaa
+}
+
+.highlight .go {
+  color:#888888
+}
+
+  .highlight .gp
+, .highlight .nn {
+    color:#555555
+}
+
+
+.highlight .gu {
+  color:#800080;
+  font-weight:bold
+}
+
+
+.highlight .kt {
+  color:#445588;
+  font-weight:bold
+}
+
+  .highlight .m
+, .highlight .mf
+, .highlight .mh
+, .highlight .mi
+, .highlight .mo
+, .highlight .il {
+    color:#009999
+}
+
+  .highlight .s
+, .highlight .sb
+, .highlight .sc
+, .highlight .sd
+, .highlight .s2
+, .highlight .se
+, .highlight .sh
+, .highlight .si
+, .highlight .sx
+, .highlight .s1 {
+    color:#d14
+}
+
+.highlight .n {
+  color:#333333
+}
+
+  .highlight .na
+, .highlight .no
+, .highlight .nv
+, .highlight .vc
+, .highlight .vg
+, .highlight .vi
+, .highlight .nb {
+    color:#0086B3
+}
+
+.highlight .nc {
+  color:#445588;
+  font-weight:bold
+}
+
+.highlight .ni {
+  color:#800080
+}
+
+  .highlight .ne
+, .highlight .nf {
+    color:#990000;
+    font-weight:bold
+}
+
+.highlight .nt {
+  color:#000080
+}
+
+.highlight .ow {
+  font-weight:bold
+}
+
+.highlight .w {
+  color:#bbbbbb
+}
+
+.highlight .sr {
+  color:#009926
+}
+
+.highlight .ss {
+  color:#990073
+}
+
+.highlight .gc {
+  color:#999;
+  background-color:#EAF2F5
+}
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="body-content"><h1 id="firedoc-a-new-doc-building-tool-compatible-with-yuidoc">Firedoc: a new doc building tool compatible with YUIDoc</h1>
+<p>In last week, I was starting a new task for <a href="https://github.com/fireball-x">Fireball</a> team, there are a bundle of new needs for YUIDoc from other team members like the following:</p>
+<ul>
+<li>we need the ability that can define the methods, properties or events under the module over class.</li>
+<li>we need the ability that can generate markdown files.</li>
+<li>we need the ability that can support multiple languages feature in an easy or handy way.</li>
+</ul>
+<p>For more features that I have implemented in the Firedoc, you could check this <a href="https://github.com/fireball-x/firedoc/blob/master/GUIDE.md">GUIDE.md</a>.</p>
+<p>Yes, as you have found that, the new build tool is fireball-x/firedoc, which is currently used in all my 2 teams.</p>
+<h3 id="the-magic-generate-a-markdown-based-documentation-in-your-project">The Magic: Generate a markdown-based documentation in your project</h3>
+<p>The first magic art of this tool is to let you generate own markdown-based documentation automatically. The fast example to show this art is here: <a href="https://github.com/fireball-x/firedoc/tree/master/docs">https://github.com/fireball-x/firedoc/tree/master/docs</a>, the firedoc itself. I build its documentation via firedoc over the original HTML pages.</p>
+<p>To complete this, only there is one line required: <a href="https://github.com/fireball-x/firedoc/blob/master/Makefile#L11">https://github.com/fireball-x/firedoc/blob/master/Makefile#L11</a>. Now when you pushed the changes that firedoc did in your local machine, then you will check your live documentation at your Github repo page.</p>
+<p>Anyway, now I released this tool to share with you, if you are interested in this project, feel free to use it and submit your suggestion, pull-request or issue, thank you.</p>
+</div>
+    </div>
+  </body>
+</html></p><span>Tags:&nbsp;</span><a href="/tags/github" style="margin-right:5px;color:#fff" class="label label-primary">github</a><a href="/tags/module" style="margin-right:5px;color:#fff" class="label label-primary">module</a><a href="/tags/repo" style="margin-right:5px;color:#fff" class="label label-primary">repo</a></section></div></div></body></html>
