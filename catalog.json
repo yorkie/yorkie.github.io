@@ -33,5 +33,10 @@
  		"title": "the-keyword-let-in-rust",
  		"path": "dist/the-keyword-let-in-rust.html",
  		"date": "Fri Jul 18 22:07:31 2014"
+ 	},
+	{
+ 		"title": "tip-of-loopback",
+ 		"path": "dist/tip-of-loopback.html",
+ 		"date": "Thu May 28 02:53:07 2015"
  	}
 ]

@@ -1,4 +1,344 @@
-<!DOCTYPE html><html lang="en"><head><title>Under Tech - github</title><link rel="stylesheet" type="text/css" href="/styles/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="/styles/css/bootstrap-theme.min.css"><link rel="stylesheet" type="text/css" href="/styles/css/home.css"></head><body class="container"><div class="row header-wrapper hidden-xs"><div class="col-md-2 col-md-offset-3"><img src="/styles/images/author.png"></div><div class="col-md-5"><img src="/styles/images/slogon.png"></div></div><div class="row post-wrapper"><div class="col-md-8 col-md-offset-2 post"><header><a href="/dist/how-i-do-add-subview-in-angular" title="how-i-do-add-subview-in-angular" class="post-title">how-i-do-add-subview-in-angular</a><div class="post-date hidden-xs"> Mon Dec 22 00:39:53 2014</div></header><section class="col-md-10 col-md-offset-1"><p><!doctype html>
+<!DOCTYPE html><html lang="en"><head><title>Under Tech - github</title><link rel="stylesheet" type="text/css" href="/styles/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="/styles/css/bootstrap-theme.min.css"><link rel="stylesheet" type="text/css" href="/styles/css/home.css"></head><body class="container"><div class="row header-wrapper hidden-xs"><div class="col-md-2 col-md-offset-3"><img src="/styles/images/author.png"></div><div class="col-md-5"><img src="/styles/images/slogon.png"></div></div><div class="row post-wrapper"><div class="col-md-8 col-md-offset-2 post"><header><a href="/dist/tip-of-loopback" title="tip-of-loopback" class="post-title">tip-of-loopback</a><div class="post-date hidden-xs"> Thu May 28 02:53:07 2015</div></header><section class="col-md-10 col-md-offset-1"><p><!doctype html>
+<!-- Created with GFM2HTML: https://github.com/rvagg/gfm2html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="created-with" content="https://github.com/rvagg/gfm2html">
+
+    <style type="text/css">/* most of normalize.css */
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}[hidden],template{display:none;}html{font-family:sans-serif;/*1*/-ms-text-size-adjust:100%;/*2*/-webkit-text-size-adjust:100%;/*2*/}body{margin:0;}a{background:transparent;}a:focus{outline:thindotted;}a:active,a:hover{outline:0;}h1{font-size:2em;margin:0.67em0;}abbr[title]{border-bottom:1pxdotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em;}pre{white-space:pre-wrap;}q{quotes:"\201C""\201D""\2018""\2019";}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}img{border:0;}svg:not(:root){overflow:hidden;}table{border-collapse:collapse;border-spacing:0;}
+
+html {
+  font: 14px 'Helvetica Neue', Helvetica, arial, freesans, clean, sans-serif;
+}
+
+.container {
+  line-height: 1.6;
+  color: #333;
+  border-radius: 3px;
+  padding: 3px;
+  width: 100%;
+  margin: 10px auto;
+}
+
+.body-content {
+  padding: 30px;
+}
+
+.body-content > *:first-child {
+  margin-top: 0 !important;
+}
+
+a, a:visited {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+  .markdown-body h1
+, .markdown-body h2
+, .markdown-body h3
+, .markdown-body h4
+, .markdown-body h5
+, .markdown-body h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #000;
+  border-bottom: 1px solid #ddd;
+}
+
+h2 {
+  font-size: 2em;
+  border-bottom: 1px solid #eee;
+  color: #000;
+}
+
+img {
+  max-width: 100%;
+}
+
+hr {
+  background: transparent url("/img/hr.png") repeat-x 0 0;
+  border: 0 none;
+  color: #ccc;
+  height: 4px;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+th {
+  font-weight: bold;
+}
+
+blockquote {
+  border-left: 4px solid #ddd;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote > :last-child, blockquote > :first-child {
+  margin-bottom: 0px;
+}
+
+pre, code {
+  font-size: 13px;
+  font-family: 'UbuntuMono', monospace;
+  white-space: nowrap;
+  margin: 0px 2px;
+  padding: 0px 5px;
+  border: 0px;
+  background-color: #ffffff;
+  border-radius: 1px;
+}
+
+pre > code {
+  white-space: pre;
+}
+
+pre {
+  overflow-x: auto;
+  white-space: pre;
+  padding: 10px;
+  line-height: 150%;
+  background-color: #fff;
+}
+
+pre code, pre tt {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  border: none;
+}
+
+  .highlight .c
+, .highlight .cm
+, .highlight .cp
+, .highlight .c1 {
+    color:#999988;
+    font-style:italic;
+}
+
+.highlight .err {
+  color:#a61717;
+  background-color:#e3d2d2
+}
+
+  .highlight .o
+, .highlight .gs
+, .highlight .kc
+, .highlight .kd
+, .highlight .kn
+, .highlight .kp
+, .highlight .kr {
+    font-weight:bold
+}
+
+.highlight .cs {
+  color:#999999;
+  font-weight:bold;
+  font-style:italic
+}
+
+.highlight .gd {
+  color:#000000;
+  background-color:#ffdddd
+}
+
+.highlight .gd .x {
+  color:#000000;
+  background-color:#ffaaaa
+}
+
+.highlight .ge {
+  font-style:italic
+}
+
+  .highlight .gr
+, .highlight .gt {
+    color:#aa0000
+}
+
+  .highlight .gh
+, .highlight .bp {
+    color:#999999
+}
+
+.highlight .gi {
+  color:#000000;
+  background-color:#ddffdd
+}
+
+.highlight .gi .x {
+  color:#000000;
+  background-color:#aaffaa
+}
+
+.highlight .go {
+  color:#888888
+}
+
+  .highlight .gp
+, .highlight .nn {
+    color:#555555
+}
+
+
+.highlight .gu {
+  color:#800080;
+  font-weight:bold
+}
+
+
+.highlight .kt {
+  color:#445588;
+  font-weight:bold
+}
+
+  .highlight .m
+, .highlight .mf
+, .highlight .mh
+, .highlight .mi
+, .highlight .mo
+, .highlight .il {
+    color:#009999
+}
+
+  .highlight .s
+, .highlight .sb
+, .highlight .sc
+, .highlight .sd
+, .highlight .s2
+, .highlight .se
+, .highlight .sh
+, .highlight .si
+, .highlight .sx
+, .highlight .s1 {
+    color:#d14
+}
+
+.highlight .n {
+  color:#333333
+}
+
+  .highlight .na
+, .highlight .no
+, .highlight .nv
+, .highlight .vc
+, .highlight .vg
+, .highlight .vi
+, .highlight .nb {
+    color:#0086B3
+}
+
+.highlight .nc {
+  color:#445588;
+  font-weight:bold
+}
+
+.highlight .ni {
+  color:#800080
+}
+
+  .highlight .ne
+, .highlight .nf {
+    color:#990000;
+    font-weight:bold
+}
+
+.highlight .nt {
+  color:#000080
+}
+
+.highlight .ow {
+  font-weight:bold
+}
+
+.highlight .w {
+  color:#bbbbbb
+}
+
+.highlight .sr {
+  color:#009926
+}
+
+.highlight .ss {
+  color:#990073
+}
+
+.highlight .gc {
+  color:#999;
+  background-color:#EAF2F5
+}
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="body-content"><h1 id="tip-of-loopback">Tip of Loopback</h1>
+<p>This is not a travel-related note, and this doesn’t cover any about the loopback address 127.0.0.1(if you know this), and this is not covering any aspect of the web framework <a href="https://loopback.io">loopback.io</a>.</p>
+<p>Hey, I’m just going to tell you the story of me using loopback.io framework since 1 month ago.</p>
+<h1 id="background">Background</h1>
+<p>Few month ago, I was still working on a New York startup and an Asian startup, we definitely were using express. The NYC project looks pretty good in front-end because of we were not using expressjs, however the backend within the express framework, it always went worse, and we had to refactor code over and over, if there are some time more than 1 week, that we didn’t clean the stale lines, the whole codebase would go some place where is hard to maintain and develop.</p>
+<p>The plight of using express did go worse in the Asian team, even though we still have other issues on this team, actually the members of the team are from the whole Asia area, including China mainland, Japan, Vietnam Canada and Indian, and we are still working remotely in different cities and time zones.</p>
+<p>I have to say, we did always delay the progress because of the architecture express-based are really bad. There are too many bike-shilds to distract us. Until one day in last month, I was nominated as the backend team leader, then the first task of mine is using loopback.io to make development more agile.</p>
+<h1 id="why-not-choosing-meteor-">Why not choosing Meteor?</h1>
+<p>As for choosing loopback over meteor, the another more pop web framework at Node.js, the reason is super simple that is we only need an API service.</p>
+<h1 id="what-did-loopback-io-help-us">What did loopback.io help us</h1>
+<p>The most reason of using loopback is we can just implement most business needs by only updating the model file. Plus, the StrongLoop team has built many built-in models like UserModel, PersistentModel and etc. They are easy to use for most of your business needs.</p>
+<p>Thanks to the clear structure of source of loopback project(Github: <a href="https://github.com/strongloop/loopback">https://github.com/strongloop/loopback</a>), we can learn and track what had been happened easily and quickly.</p>
+<p>After comparing the complexity between codebases, we are clearly to get the following report:</p>
+<ul>
+<li>The total of lines did reduce by 70%</li>
+<li>The lines of controllers did reduce by 90%</li>
+<li>The lines of models did reduce by 10%</li>
+<li>The lines of views keeps unchanged</li>
+<li>The lines which are not related to business logic did reduce by 99%</li>
+</ul>
+<p>The improvements are obviously, especially the 5th are what I strongly suggest you should use loopback in your business project. The reason is exactly obvious, there are too many failures in my previous projects are caused by bike-sheilds problems.</p>
+<h1 id="what-did-loopback-io-bother-me">What did loopback.io bother me</h1>
+<p>Yup, as you have also concerned before, the loopback’s community is not activity than express, koa and Meteor.</p>
+<p>But this is absolutely Okay for using this framework, again thanks to the clear structure of source of loopback, we can easily track problems by reading documentation and source code.</p>
+<p>Trust me, that’s really not too hard for most of node developers, because I’m just doing this in my current projects.</p>
+<p>If you have any problems with using loopback, you could send me your question to my email address: yorkiefixer@gmail.com.</p>
+<p>By the way, I’m not really the staff from StrongLoop, Inc. The initial purpose of this story is helping developers to write more robust and reliable apps in simplest way.</p>
+</div>
+    </div>
+  </body>
+</html></p><span>Tags:&nbsp;</span><a href="/tags/github" style="margin-right:5px;color:#fff" class="label label-primary">github</a></section></div></div><div class="row post-wrapper"><div class="col-md-8 col-md-offset-2 post"><header><a href="/dist/how-i-do-add-subview-in-angular" title="how-i-do-add-subview-in-angular" class="post-title">how-i-do-add-subview-in-angular</a><div class="post-date hidden-xs"> Mon Dec 22 00:39:53 2014</div></header><section class="col-md-10 col-md-offset-1"><p><!doctype html>
 <!-- Created with GFM2HTML: https://github.com/rvagg/gfm2html -->
 <html lang="en">
   <head>
