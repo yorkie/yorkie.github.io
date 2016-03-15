@@ -2,15 +2,12 @@
 <head>
   <body>
     <input id="ip" value=""/>
+    <input type="file" onchange="onFileChange" />
   </body>
-  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script>
-    var ip = $('#ip');
-    ip.on('input', function () {
-      alert('Oh');
-    });
-    ip.on('keyup', function () {
-      alert('from key up');
-    });
+    function onFileChange (event) {
+      console.log(event);
+      console.log(event.target.files);
+    }
   </script>
 </html>
